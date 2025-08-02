@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitCozy - Your Personal Gym Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏋️ FitCozy</h1>
+            <p>Your cozy companion for fitness tracking</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Add Exercise Card -->
+            <div class="card">
+                <h2><span class="emoji">💪</span>Add Exercise</h2>
+                <form id="exerciseForm">
+                    <div class="form-group">
+                        <label for="exerciseName">Exercise Name</label>
+                        <input type="text" id="exerciseName" placeholder="Push-ups, Squats, Running..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exerciseType">Type</label>
+                        <select id="exerciseType" required>
+                            <option value="">Select type</option>
+                            <option value="strength">💪 Strength</option>
+                            <option value="cardio">🏃 Cardio</option>
+                            <option value="flexibility">🧘 Flexibility</option>
+                            <option value="sports">⚽ Sports</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration (minutes)</label>
+                        <input type="number" id="duration" placeholder="30" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="intensity">Intensity</label>
+                        <select id="intensity" required>
+                            <option value="">Select intensity</option>
+                            <option value="low">😌 Low</option>
+                            <option value="moderate">😊 Moderate</option>
+                            <option value="high">🔥 High</option>
+                            <option value="extreme">🚀 Extreme</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="calories">Calories Burned (optional)</label>
+                        <input type="number" id="calories" placeholder="200" min="0">
+                    </div>
+                    <button type="submit" class="btn">Add Exercise</button>
+                </form>
+            </div>
+
+            <!-- Today's Stats Card -->
+            <div class="card">
+                <h2><span class="emoji">📊</span>Today's Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 id="totalExercises">0</h3>
+                        <p>Exercises</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="totalDuration">0</h3>
+                        <p>Minutes</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="totalCalories">0</h3>
+                        <p>Calories</p>
+                    </div>
+                </div>
+                <div class="progress-chart">
+                    <h3>Daily Goal Progress</h3>
+                    <div style="background: #e2e8f0; border-radius: 10px; height: 20px; margin: 15px 0; position: relative;">
+                        <div id="progressBar" style="background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; border-radius: 10px; width: 0%; transition: width 0.5s ease;"></div>
+                    </div>
+                    <p id="progressText">0% of daily goal (60 minutes)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise History -->
+        <div class="card progress-section">
+            <h2><span class="emoji">📝</span>Today's Exercises</h2>
+            <div class="exercise-list" id="exerciseList">
+                <div style="text-align: center; opacity: 0.6; padding: 40px;">
+                    <span style="font-size: 3rem;">🌱</span>
+                    <p>No exercises logged yet. Start your fitness journey!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Motivational Quote -->
+        <div class="motivational-quote" id="motivationalQuote">
+            "The groundwork for all happiness is good health." - Leigh Hunt
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
